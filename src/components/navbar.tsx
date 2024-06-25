@@ -20,16 +20,16 @@ export function Navbar() {
 
           <div className='hidden items-center space-x-4 md:flex'>
             <DropdownNav
-              label='Perfumes'
-              title='Perfumaria'
+              label='Blushs'
+              title='Pó'
               options={[
-                { label: "R$ 79,90", link: "/perfumes/top10" },
-                { label: "R$ 89,90", link: "/perfumes/top5" },
-                { label: "R$ 99,90", link: "/perfumes/linha-candy" },
+                { label: "R$ 7,90", link: "/blushs/top10" },
+                { label: "R$ 8,90", link: "/blushs/top5" },
+                { label: "R$ 9,90", link: "/blushs/linha-candy" },
               ]}
             />
             <NavLink
-              to='/skincare'
+              to='/delineador'
               className={({ isActive }) =>
                 buttonVariants({
                   variant: isActive ? "activeGhost" : "ghost",
@@ -37,19 +37,19 @@ export function Navbar() {
                 })
               }
             >
-              Skincare
+              Delineador
             </NavLink>
 
             <DropdownNav
-              label='Body splash'
-              title='Lançamentos'
+              label='Sombrancelha'
+              title=''
               options={[
-                { label: "R$ 34,90", link: "/body-splash/top10" },
-                { label: "R$ 36,90", link: "/body-splash/linha-candy" },
+                { label: "R$ 14,90", link: "/sombra/top10" },
+                { label: "R$ 26,90", link: "/sombra/linha-candy" },
               ]}
             />
             <NavLink
-              to='/body-cream'
+              to='/batom'
               className={({ isActive }) =>
                 buttonVariants({
                   variant: isActive ? "activeGhost" : "ghost",
@@ -57,10 +57,10 @@ export function Navbar() {
                 })
               }
             >
-              Body cream
+              Batom
             </NavLink>
             <NavLink
-              to='/make'
+              to='/esmalte'
               className={({ isActive }) =>
                 buttonVariants({
                   variant: isActive ? "activeGhost" : "ghost",
@@ -68,18 +68,7 @@ export function Navbar() {
                 })
               }
             >
-              Make
-            </NavLink>
-            <NavLink
-              to='/hair'
-              className={({ isActive }) =>
-                buttonVariants({
-                  variant: isActive ? "activeGhost" : "ghost",
-                  size: "sm",
-                })
-              }
-            >
-              Hair
+              Esmalte
             </NavLink>
             <NavLink
               to='/news'

@@ -1,7 +1,6 @@
-import { ArrowRight, Menu } from "lucide-react";
+import { CircleUser, Menu, ShoppingCart } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { contactlink } from "@/consts";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
 
@@ -36,61 +35,85 @@ export function MobileNav() {
           <ul className='absolute bg-white border-b border-zinc-200 shadow-xl grid w-full gap-3 px-5 md:px-10 pt-10 md:pt-20 pb-5 md:pb-8'>
             <li>
               <Link
-                onClick={() => closeOnCurrent("/")}
+                onClick={() => closeOnCurrent("/delineador")}
                 className='flex items-center w-full font-semibold'
-                to='/'
+                to='/blushs'
               >
-                Início
+                Blushs
               </Link>
             </li>
             <li>
               <Link
-                onClick={() => closeOnCurrent("/#about")}
+                onClick={() => closeOnCurrent("/delineador")}
                 className='flex items-center w-full font-semibold'
-                to='/about'
+                to='/delineador'
               >
-                Sobre nós
+                Delineador
               </Link>
             </li>
             <li>
               <Link
-                onClick={() => closeOnCurrent("/how-it-works")}
+                onClick={() => closeOnCurrent("/sombra")}
                 className='flex items-center w-full font-semibold'
-                to='/how-it-works'
+                to='/sombra'
               >
-                Como funciona?
+                Sombrancelha
               </Link>
             </li>
             <li>
               <Link
-                onClick={() => closeOnCurrent("/#focus")}
+                onClick={() => closeOnCurrent("/batom")}
                 className='flex items-center w-full font-semibold'
-                to='/focus'
+                to='/batom'
               >
-                Área de Foco
+                Batom
               </Link>
             </li>
             <li>
               <Link
-                onClick={() => closeOnCurrent("/pricing")}
+                onClick={() => closeOnCurrent("/esmalte")}
                 className='flex items-center w-full font-semibold'
-                to='/pricing'
+                to='/esmalte'
               >
-                Preços
+                Esmalte
               </Link>
             </li>
             <li>
               <Link
-                className={cn(
-                  buttonVariants({
-                    size: "sm",
-                  }),
-                  ""
-                )}
-                to={contactlink}
+                onClick={() => closeOnCurrent("/news")}
+                className='flex items-center w-full font-semibold'
+                to='/news'
               >
-                Entre em Contato <ArrowRight className='ml-1.5 h-5 w-5' />
+                Novidades
               </Link>
+            </li>
+            <li>
+              <div className='flex items-start justify-start gap-2'>
+                <Link
+                  className={cn(
+                    buttonVariants({
+                      size: "sm",
+                      variant: "ghost",
+                    }),
+                    ""
+                  )}
+                  to='/cart'
+                >
+                  <ShoppingCart className='text-primary' />
+                </Link>
+                <Link
+                  className={cn(
+                    buttonVariants({
+                      size: "sm",
+                      variant: "ghost",
+                    }),
+                    ""
+                  )}
+                  to='/profile'
+                >
+                  <CircleUser className='text-primary' />
+                </Link>
+              </div>
             </li>
           </ul>
         </div>
