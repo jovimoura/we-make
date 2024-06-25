@@ -1,12 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { CircleUser, ShoppingCart } from "lucide-react";
 
 import { MaxWidthWrapper } from "./max-width-wrapper";
 import { buttonVariants } from "./ui/button";
 import { MobileNav } from "./mobile-nav";
 import { Logo } from "./logo";
 import { cn } from "@/lib/utils";
-import { contactlink } from "@/consts";
+import { DropdownNav } from "./dropdown-nav";
 
 export function Navbar() {
   return (
@@ -19,64 +19,104 @@ export function Navbar() {
           </div>
 
           <div className='hidden items-center space-x-4 md:flex'>
+            <DropdownNav
+              label='Perfumes'
+              title='Perfumaria'
+              options={[
+                { label: "R$ 79,90", link: "/perfumes/top10" },
+                { label: "R$ 89,90", link: "/perfumes/top5" },
+                { label: "R$ 99,90", link: "/perfumes/linha-candy" },
+              ]}
+            />
             <NavLink
-              to='/'
-              className={({ isActive }) => buttonVariants({
-                variant: isActive ? "activeGhost" : "ghost",
-                size: "sm",
-              })}
+              to='/skincare'
+              className={({ isActive }) =>
+                buttonVariants({
+                  variant: isActive ? "activeGhost" : "ghost",
+                  size: "sm",
+                })
+              }
             >
-              Início
+              Skincare
+            </NavLink>
+
+            <DropdownNav
+              label='Body splash'
+              title='Lançamentos'
+              options={[
+                { label: "R$ 34,90", link: "/body-splash/top10" },
+                { label: "R$ 36,90", link: "/body-splash/linha-candy" },
+              ]}
+            />
+            <NavLink
+              to='/body-cream'
+              className={({ isActive }) =>
+                buttonVariants({
+                  variant: isActive ? "activeGhost" : "ghost",
+                  size: "sm",
+                })
+              }
+            >
+              Body cream
             </NavLink>
             <NavLink
-              to='/about'
-              className={({ isActive }) => buttonVariants({
-                variant: isActive ? "activeGhost" : "ghost",
-                size: "sm",
-              })}
+              to='/make'
+              className={({ isActive }) =>
+                buttonVariants({
+                  variant: isActive ? "activeGhost" : "ghost",
+                  size: "sm",
+                })
+              }
             >
-              Sobre nós
+              Make
             </NavLink>
             <NavLink
-              to='/how-it-works'
-              className={({ isActive }) => buttonVariants({
-                variant: isActive ? "activeGhost" : "ghost",
-                size: "sm",
-              })}
+              to='/hair'
+              className={({ isActive }) =>
+                buttonVariants({
+                  variant: isActive ? "activeGhost" : "ghost",
+                  size: "sm",
+                })
+              }
             >
-              Como funciona?
+              Hair
             </NavLink>
             <NavLink
-              to='/focus'
-              className={({ isActive }) => buttonVariants({
-                variant: isActive ? "activeGhost" : "ghost",
-                size: "sm",
-              })}
-            >
-              Área de Foco
-            </NavLink>
-            <NavLink
-              to='/pricing'
+              to='/news'
               className={buttonVariants({
                 variant: "ghost",
                 size: "sm",
               })}
             >
-              Preços
+              Novidades
             </NavLink>
           </div>
-          <Link
-            className={cn(
-              buttonVariants({
-                size: "sm",
-              }),
-              ""
-            )}
-            to={contactlink}
-            target='_blank'
-          >
-            Entre em Contato <ArrowRight className='ml-1.5 h-5 w-5' />
-          </Link>
+          <div className='flex items-center justify-center gap-2'>
+            <Link
+              className={cn(
+                buttonVariants({
+                  size: "sm",
+                  variant: "ghost",
+                }),
+                ""
+              )}
+              to='/cart'
+            >
+              <ShoppingCart className='text-primary' />
+            </Link>
+            <Link
+              className={cn(
+                buttonVariants({
+                  size: "sm",
+                  variant: "ghost",
+                }),
+                ""
+              )}
+              to='/profile'
+            >
+              <CircleUser className='text-primary' />
+            </Link>
+          </div>
         </div>
       </MaxWidthWrapper>
     </nav>

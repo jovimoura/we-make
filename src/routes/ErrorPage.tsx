@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 const ErrorPage = () => {
   return ( 
     <div className="min-h-screen flex flex-col space-y-4 items-center justify-center text-muted-foreground">
+      <img src="/manutencao.jpg" alt="" />
       <p>
-        Algo deu errado :(
+        Opa, esta página ainda não está pronta!
       </p>
       <Button variant="secondary" asChild>
         <Link to="/">
