@@ -26,10 +26,10 @@ export function Footer() {
             </h1>
           </Link>
           <span className='max-w-[180px]'>
-            Todos Os Body Splashes A Partir de R$ 32,90 Cada!
+            Todos os produtos a partir de R$ 34,90!
           </span>
           <div className='flex items-center justify-center gap-3'>
-            <Link to='https://www.instagram.com/jmtech.rj/' target='_blank'>
+            <Link to='https://www.instagram.com/ojohndev/' target='_blank'>
               <Instagram size={20} className='cursor-pointer w-6 h-6' />
             </Link>
             <Link to='https://www.linkedin.com/in/jovimoura10/' target='_blank'>
@@ -47,7 +47,7 @@ export function Footer() {
           </div>
           <div className='flex items-center justify-start gap-2'>
             <Link to='/help' className='link link-hover'>
-            Central de Ajuda
+              Central de Ajuda
             </Link>
             <ArrowRight size={12} />
           </div>
@@ -58,7 +58,7 @@ export function Footer() {
             <ArrowRight size={12} />
           </div>
           <div className='flex items-center justify-start gap-2'>
-            <Link to='/career'target='_blank' className='link link-hover'>
+            <Link to='/career' target='_blank' className='link link-hover'>
               Trabalhe conosco
             </Link>
             <ArrowRight size={12} />
@@ -66,25 +66,28 @@ export function Footer() {
         </div>
 
         <div className='flex flex-col items-start justify-start gap-4'>
-        <h1
-              className={cn("text-xl text-white font-semibold tracking-wider")}
-            >
-              Formas de pagamento
-            </h1>
-          <div className='flex items-center justify-center gap-3'>
-            {}
+          <h1 className={cn("text-xl text-white font-semibold tracking-wider")}>
+            Formas de pagamento
+          </h1>
+          <div className='flex items-center justify-center gap-5'>
+            <img src='/amex.svg' alt='' />
+            <img src='/diners-club.svg' alt='' />
+            <img src='/mastercard.svg' alt='' />
+            <img src='/picpay.svg' alt='' />
+            <img src='/pix.svg' alt='' />
+            <img src='/visa.svg' alt='' />
           </div>
         </div>
       </footer>
       <footer className='px-5 md:px-10 py-4 border-t border-white bg-primary'>
         <div className='hidden md:flex items-center justify-between text-sm text-white'>
           <span className='hidden md:flex items-center justify-center'>
-            © {today.getFullYear()} WeMake • Todos direitos reservados
-            • Desenvolvido por
+            © {today.getFullYear()} WeMake • Todos direitos reservados •
+            Desenvolvido por
             <Link
               to='https://jovimoura.vercel.app/'
               target='_blank'
-              className='hover:underline'
+              className='hover:underline ml-1'
             >
               John Moura
             </Link>
@@ -105,7 +108,7 @@ export function Footer() {
             target='_blank'
             className='hover:underline text-center'
           >
-            Desenvolvido por <span className='text-sm'>John Moura</span>
+            Desenvolvido por <span className='text-sm ml-1'>John Moura</span>
           </Link>
         </span>
       </footer>

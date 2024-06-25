@@ -31,7 +31,7 @@ export function DropdownNav({ label, options, title }: Props) {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           {options.map(option => 
-            <DropdownMenuItem>
+            <DropdownMenuItem key={option.link}>
               <NavLink
                 to={option.link}
               >
