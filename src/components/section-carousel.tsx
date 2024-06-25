@@ -55,8 +55,8 @@ export function SectionCarousel({ items }: Props) {
         ))}
         
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="md:-left-12 -left-2" />
+      <CarouselNext className="md:-right-12 -right-2" />
     </Carousel>
   );
 }
